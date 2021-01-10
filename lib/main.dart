@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_giphy/features/search/presentation/pages/search_page.dart';
+import 'package:flutter_giphy/injection_container.dart' as di;
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  di.init();
   runApp(GiphyApp());
 }
 
