@@ -28,16 +28,4 @@ class GiphyPagination extends Equatable{
   String toString() {
     return 'GiphyPagination{totalCount: $totalCount, count: $count, offset: $offset}';
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-          other is GiphyPagination &&
-              runtimeType == other.runtimeType &&
-              totalCount == other.totalCount &&
-              count == other.count &&
-              offset == other.offset;
-
-  @override
-  int get hashCode => totalCount.hashCode ^ count.hashCode ^ offset.hashCode;
 }

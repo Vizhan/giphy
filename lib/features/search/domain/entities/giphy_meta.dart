@@ -22,12 +22,4 @@ class GiphyMeta extends Equatable {
   String toString() {
     return 'GiphyMeta{status: $status, msg: $msg, responseId: $responseId}';
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is GiphyMeta && runtimeType == other.runtimeType && status == other.status && msg == other.msg && responseId == other.responseId;
-
-  @override
-  int get hashCode => status.hashCode ^ msg.hashCode ^ responseId.hashCode;
 }

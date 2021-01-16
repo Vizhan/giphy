@@ -25,12 +25,4 @@ class GiphyCollection extends Equatable {
   String toString() {
     return 'GiphyCollection{data: $data, pagination: $pagination, meta: $meta}';
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is GiphyCollection && runtimeType == other.runtimeType && data == other.data && pagination == other.pagination && meta == other.meta;
-
-  @override
-  int get hashCode => data.hashCode ^ pagination.hashCode ^ meta.hashCode;
 }
