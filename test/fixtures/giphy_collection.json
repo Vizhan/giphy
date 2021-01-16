@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "status": 200,
+    "msg": "OK"
+  },
+  "pagination": {
+    "offset": 0,
+    "count": 20,
+    "total_count": 20
+  },
+  "data": [
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    },
+    {
+      "images": {
+        "preview_gif": {
+          "url": "https://media1.giphy.com/media/cZ7rmKfFYOvYI/giphy-preview.gif",
+          "width": "320",
+          "height": "200"
+        }
+      }
+    }
+  ]
+}
