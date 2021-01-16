@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_giphy/core/error/failures.dart';
 import 'package:flutter_giphy/features/search/domain/entities/giphy_collection.dart';
+import 'package:flutter_giphy/features/search/domain/entities/giphy_gif.dart';
 import 'package:flutter_giphy/features/search/domain/usecases/get_gifs_by_search_query.dart';
-import 'package:flutter_giphy/features/search/presentation/bloc/search_event.dart';
-import 'package:flutter_giphy/features/search/presentation/bloc/search_state.dart';
+import 'package:flutter_giphy/features/search/presentation/bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
 const String UNEXPECTED_ERROR = 'Unexpected error';
@@ -12,9 +12,16 @@ const int pageSize = 20;
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
   final GetGifsBySearchQuery getGifsBySearchQuery;
-  int offset = 0;
-  bool isFetching = false;
-  GiphyCollection collectionSnapshot;
+
+  int _page = 0;
+
+  List<GiphyGif> _gifSnapshot = [];
+
+  List<GiphyGif> get gifSnapshot => _gifSnapshot;
+
+  bool _hasMoreData = true;
+
+  bool get hasMoreData => _hasMoreData;
 
   SearchBloc({
     @required this.getGifsBySearchQuery,
@@ -25,25 +32,33 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
 
   @override
   Stream<SearchState> mapEventToState(SearchEvent event) async* {
-    print(event.runtimeType);
     if (event is GetInitialGifsBySearchQueryEvent) {
-      offset = 0;
+      _resetResults();
       yield Loading();
       final failureOrCollection = await getGifsBySearchQuery.call(Params(
         query: event.query,
-        offset: offset,
+        offset: _page,
         limit: pageSize,
       ));
       yield* _eitherLoadedOrErrorState(failureOrCollection);
-    } else if (event is GetMoreGifsBySearchQueryEvent) {
-      yield Loading();
+    } else if ((event is GetMoreGifsBySearchQueryEvent) && _hasMoreData) {
+      _incrementPage();
       final failureOrCollection = await getGifsBySearchQuery.call(Params(
         query: event.query,
-        offset: ++offset * pageSize,
+        offset: _page * pageSize,
         limit: pageSize,
       ));
-      //TODO
+      yield* _eitherLoadedOrErrorState(failureOrCollection);
     }
+  }
+
+  void _resetResults() {
+    _page = 0;
+    _gifSnapshot.clear();
+  }
+
+  void _incrementPage() {
+    _page = _page + 1;
   }
 
   Stream<SearchState> _eitherLoadedOrErrorState(
@@ -51,8 +66,14 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   ) async* {
     yield failureOrCollection.fold(
       (failure) => Error(_mapFailureToMessage(failure)),
-      (collection) => Loaded(collection),
+      (collection) => Loaded(_appendLoadedData(collection)),
     );
+  }
+
+  List<GiphyGif> _appendLoadedData(GiphyCollection collection) {
+    final newCollection = List.of(_gifSnapshot..addAll(collection.data));
+    _hasMoreData = collection.pagination.totalCount > newCollection.length;
+    return newCollection;
   }
 
   String _mapFailureToMessage(Failure failure) {

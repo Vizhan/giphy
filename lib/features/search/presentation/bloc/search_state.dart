@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_giphy/features/search/domain/entities/giphy_collection.dart';
+import 'package:flutter_giphy/features/search/domain/entities/giphy_gif.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -13,12 +13,12 @@ class Empty extends SearchState {}
 class Loading extends SearchState {}
 
 class Loaded extends SearchState {
-  final GiphyCollection giphyCollection;
+  final List<GiphyGif> giphyCollection;
 
   Loaded(this.giphyCollection);
 
   @override
-  List<Object> get props => super.props..addAll([giphyCollection]);
+  List<Object> get props => [giphyCollection];
 }
 
 class Error extends SearchState {
@@ -27,5 +27,5 @@ class Error extends SearchState {
   Error(this.message);
 
   @override
-  List<Object> get props => super.props..addAll([message]);
+  List<Object> get props => [message];
 }

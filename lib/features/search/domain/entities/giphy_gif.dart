@@ -1,7 +1,9 @@
+import 'package:equatable/equatable.dart';
+
 import 'giphy_images.dart';
 import 'giphy_user.dart';
 
-class GiphyGif {
+class GiphyGif extends Equatable {
   final String title;
   final String type;
   final String id;
@@ -43,6 +45,29 @@ class GiphyGif {
     this.user,
     this.images,
   });
+
+  @override
+  List<Object> get props => [
+        title,
+        type,
+        id,
+        slug,
+        url,
+        bitlyGifUrl,
+        bitlyUrl,
+        embedUrl,
+        username,
+        source,
+        rating,
+        contentUrl,
+        sourceTld,
+        sourcePostUrl,
+        isSticker,
+        importDatetime,
+        trendingDatetime,
+        user,
+        images
+      ];
 
   factory GiphyGif.fromJson(Map<String, dynamic> json) => GiphyGif(
       title: json['title'] as String,

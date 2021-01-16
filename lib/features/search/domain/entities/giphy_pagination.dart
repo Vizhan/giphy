@@ -1,9 +1,12 @@
 import 'package:equatable/equatable.dart';
 
-class GiphyPagination {
+class GiphyPagination extends Equatable{
   final int totalCount;
   final int count;
   final int offset;
+
+  @override
+  List<Object> get props => [totalCount, count, offset];
 
   GiphyPagination({this.totalCount, this.count, this.offset});
 
